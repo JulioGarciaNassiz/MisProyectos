@@ -8,7 +8,7 @@ import { renderToString } from 'react-dom/server';
 import { match, RouterContext } from 'react-router';
 import {routes} from './routes';
 import NotFoundPage from './components/NotFoundPage';
-import {getItem} from './data/sevices'
+import {getItem, getItems} from './data/sevices'
 
 
 // initialize the server and configure support for ejs templates
@@ -19,7 +19,7 @@ app.set('views', path.join(__dirname, 'views'));
 
 // define the folder that will be used for static assets
 app.use(Express.static(path.join(__dirname, 'static')));
-//app.get('/api/items?q=:query', getItems)
+app.get('/api/items', getItems)
 //app.get('/api/items/:id', getItem)
 app.get('/api/items/:id',getItem);
 // universal routing and rendering
@@ -45,8 +45,8 @@ app.get('*', (req, res) => {
         markup = renderToString(<RouterContext {...renderProps}/>);
       } else {
         // otherwise we can render a 404 page
-        markup = renderToString(<NotFoundPage/>);
-        res.status(404);
+        //markup = renderToString(<NotFoundPage/>);
+        //res.status(404);
       }
 
       // render the index template with the embedded React markup

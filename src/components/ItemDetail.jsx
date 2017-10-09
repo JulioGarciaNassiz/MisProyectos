@@ -15,10 +15,8 @@ export default class ItemDetail extends React.Component {
       };
     }
   componentDidMount () {
-    console.log('componentWillMount')
     axios.get(' http://localhost:3000/api/items/' + this.props.params.id)
     .then(response => {
-      console.log('then')
       const item = response.data;
       const braedcrumbs = 'musica > discos > rock'
       this.setState(

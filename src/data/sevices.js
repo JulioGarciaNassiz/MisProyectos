@@ -19,8 +19,8 @@ exports.getItem = function (req, res) {
                "title":item.data.title,
                "price":{  
                   "currency":item.data.currency_id,
-                  "amount":item.data.price,
-                  "decimals":item.data.price
+                  "amount":(item.data.price +'').split('.')[0],
+                  "decimals":(item.data.price +'').split('.')[1] ===undefined ?'00' : (item.data.price +'').split('.')[1]
                },
                "picture":item.data.pictures[0].url,
                "condition":item.data.condition,
@@ -34,3 +34,44 @@ exports.getItem = function (req, res) {
       .catch(error => console.log("llamada a servico"+error));
       
   }
+
+  exports.getItems = function (req, res) {
+
+    axios.get('https://api.mercadolibre.com/sites/MLA/search?q='+req.query.q).then(items => {
+            
+      var resultItems = []
+
+        for(var i = 0; i < 4; i++ ){
+          if(items.data.results[i]!== undefined){
+            var item = items.data.results[i]
+            var jsonItem = {  
+              "id":item.id,
+              "title":item.title,
+              "price":{  
+                "currency":item.currency_id,
+                "amount":(item.price + '').split('.')[0],
+                "decimals":(item.price + '').split('.')[1] === undefined ?'00' : (item.price + '').split('.')[1]
+              },
+              "picture":item.thumbnail,
+              "condition":item.condition,
+              "free_shipping":item.shipping.free_shipping
+            }
+            
+            resultItems.push(jsonItem)
+          }
+          
+        }
+        const searchResult = {  
+          "author":{  
+              "name":"Julio",
+              "lastname":"Garcia"
+          },
+          "categories":items.data.filters[0] !== undefined ? items.data.filters[0].values[0].path_from_root.map(paths => paths.name ):['home'],
+          "items": resultItems
+          
+        }
+        res.send(searchResult)
+      })
+      .catch(error => console.log("llamada a servico"+error));
+          
+      }
