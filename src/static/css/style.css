@@ -1,0 +1,126 @@
+[data-reactroot] {
+    height: 100% !important;
+    width: 100% !important;
+    padding-left: 0px !important;
+    padding-right: 0px !important; 
+}
+
+.row{
+    margin-left: 0px !important;
+    margin-right: 0px !important; 
+}
+.nav-header.nav-header-fixed {
+    position: fixed;
+    z-index: 900;
+    width: 100%;
+    padding: 10px;
+}
+.nav-header {
+    background-color: #fff059;
+    border-bottom: 1px solid #d9d9d9;
+    background-image: none;
+    height: 54px;
+    font-size: 13px;
+    font-weight: 400;
+}
+.nav-logo {
+    height: 40px;
+    top: 7px;
+    width: 159px;
+}
+
+.mainContainer{
+    height: 100%;
+    background-color: #eeeeee;
+    overflow: auto;
+}
+.items-container{
+    margin: 0% 8% 8% 8%;
+    background: #ffffff;
+}
+.list-item{
+    margin-right: 16px!important;
+    margin-left: 16px!important;
+    border-bottom: 1px solid #eeeeee;
+}
+
+.image-container{
+    height: 180px;
+    width: 180px;
+    margin: 16px;
+    display: inline-block;
+}
+.image-container a img{
+    height: 180px;
+    width: 180px;
+    border-radius: 4px;
+}
+.description-container{
+    display: inline-block;
+    vertical-align: top;
+    width: 35%;
+    margin-top: 32px;
+}
+.city-container{
+    float: right;
+    margin: 0px 16px 16px 16px;
+    padding: 50px;
+}
+.detail-image-container{
+    height: 680px;
+    width: 680px;
+    margin: 16px;
+    display: inline-block;
+}
+.detail-image-container img{
+    height: 680px;
+    width: 680px;
+    border-radius: 4px;
+}
+.search-breadcrumb{
+    color: #666666;
+    margin-top: 6%;
+    margin-left: 8%;
+}
+.free-shipping{
+    display: inline-block;
+    height: 24px;
+    margin-left: 5px;
+    margin-bottom: 2px;
+}
+.detail-price{
+    font-size: 46px;
+}
+
+.detail-price h5 {
+    display: -webkit-inline-box;
+    vertical-align: text-top;
+}
+
+.buy-button{
+    color: #ffffff!important;
+    background-color: #3483fa!important;
+    border-color: #3483fa!important;
+    margin-right: 32px;
+    width: -webkit-fill-available;
+}
+.detail-top{
+    margin: 32px 0px 16px 0px;
+}
+.detail-middle{
+    margin: 0px;
+}
+.detail-price{
+    margin: 32px 0px 32px 0px;
+}
+.detail-product-desc-t{
+    margin: 0px 0px 32px 32px;
+    font-size: 28px;
+}
+.detail-product-desc-c{
+    margin: 0px 0px 32px 32px;
+    font-size: 16px;
+    width: 680px;
+    color: #666666;
+
+}
