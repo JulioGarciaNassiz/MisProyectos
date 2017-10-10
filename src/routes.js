@@ -9,11 +9,11 @@ import NotFoundPage from './components/NotFoundPage.jsx';
 
 const routes = (
   <Route path="/" component={SearchBox} >
-    <Route path="/items/:id" component={ItemDetail}/>
-    <Route path="/items" component={SearchResult}/>
-    <Route path="*" component={NotFoundPage}/>
+    <Route path="/items/:id" component={ItemDetail} />
+    <Route path="/items" component={SearchResult} />
+    <Route path="*" component={NotFoundPage} />
   </Route>
-); 
+);
 
 
 export default routes;
